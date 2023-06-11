@@ -1,0 +1,6 @@
+# Ignore config with credentials
+makefile
+
+# Ignore misc files used in project development
+.vscode/
+test.py
