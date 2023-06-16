@@ -1,1 +1,0 @@
-Some helper functions for interacting with AWS S3 and YML config files

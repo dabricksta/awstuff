@@ -1,11 +1,30 @@
 Metadata-Version: 2.1
 Name: awstuff
-Version: 0.211
+Version: 0.2.1.5
 Summary: Helper functions for interacting with AWS and other misc tasks
-Home-page: UNKNOWN
-Author-email: danieldbrickell@gmail.com
-License: UNKNOWN
+Home-page: https://github.com/dabricksta/awstuff
+Author: Daniel Brickell
+Author-email: DanielDBrickell@gmail.com
+License: MIT
+Keywords: aws,etl,elt,load,s3
 Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
 
-UNKNOWN
+Some helper functions for interacting with AWS S3 and YML config files
+
+#### Details
+Currently contains several functions primarily for interacting with AWS S3, typically used in the L of an ETL pipeline
+
+Status: WIP
 
