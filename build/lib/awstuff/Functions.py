@@ -35,7 +35,6 @@ class Functions:
             return boto3.resource("s3")
         except Exception as e:
             print(f"Can't connect to S3. Error: {e}")
-            sys.exit(1)
 
 
     def assure_s3_bucket(s3, bckt):
@@ -106,10 +105,15 @@ class Functions:
         ct = len(results)
         
         for key, result in zip(objects, results):
-            if result is not None and result.get('ResponseMetadata', {}).get('HTTPStatusCode') == 200:
-                print(f'Copied over: {key}')
-            else:
-                print(f'Failed to copy: {key}. Result: {result}')
+            try:
+                if result is not None and result.get('ResponseMetadata', {}).get('HTTPStatusCode') == 200:
+                    print(f'Copied over: {key}')
+                else:
+                    print(f'Failed to copy: {key}. Result: {result}')
+            except TypeError as e:
+                print(e)
+
+
         
         print(f'Copying complete, {dest_prefix} folder on destination bucket updated. {ct} objects copied over.')
 
