@@ -71,7 +71,7 @@ class Functions:
         # returns the set of keys after applying the prefix and optionally removing file extensions.
             keys = set()
             for obj in bucket.objects.filter(Prefix=prefix):
-                key = obj.key[len(prefix)+1:] if prefix else obj.key
+                key = obj.key[len(prefix):] if prefix else obj.key
                 if not match_extensions:
                     key = os.path.splitext(key)[0]
                 keys.add(key)

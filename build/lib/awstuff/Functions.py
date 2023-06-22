@@ -1,7 +1,6 @@
 import boto3
 import botocore
 import os
-import sys
 import yaml
 
 class Functions:
@@ -22,7 +21,6 @@ class Functions:
                 return yaml.safe_load(f)
         except Exception as e:
             print(f'{e}\nDid you create the config file described in the README?')
-            sys.exit(1)
 
 
     def connect_to_s3():
@@ -73,7 +71,7 @@ class Functions:
         # returns the set of keys after applying the prefix and optionally removing file extensions.
             keys = set()
             for obj in bucket.objects.filter(Prefix=prefix):
-                # key = obj.key[len(prefix)+1:] if prefix else obj.key TODO if +1 right
+                key = obj.key[len(prefix)+1:] if prefix else obj.key
                 if not match_extensions:
                     key = os.path.splitext(key)[0]
                 keys.add(key)
